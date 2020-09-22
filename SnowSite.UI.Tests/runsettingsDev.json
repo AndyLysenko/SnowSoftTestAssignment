@@ -1,0 +1,11 @@
+{
+  "webdriver": {
+    "browser": "chrome",
+    "commandTimeout": 60,
+    "searchTimeout": 20,
+    "pageLoadTimeout": 30
+  },
+  "environment": {
+    "homepage": "https://localhost/snowsoftware/"
+  }
+}
