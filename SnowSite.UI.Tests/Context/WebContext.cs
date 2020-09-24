@@ -1,22 +1,37 @@
 ﻿using SnowSite.UI.Tests.Web;
+using System;
 
 namespace SnowSite.UI.Tests.Context
 {
-    public static class WebContext
+    public sealed class WebContext : IDisposable
     {
-        static WebContext() { }
-
-        public static Browser Browser { get; private set; }
-        //public static IWebDriver WebDriver { get; private set; }
-
-        public static void Initialize()
+        # region singleton
+        private WebContext()
         {
             Browser = new BrowserFactory().GetBrowser();
         }
 
-        public static void Dispose()
+        private static WebContext instance = new WebContext();
+
+        public static WebContext Instance
         {
-            Browser?.Dispose();
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new WebContext();
+                }
+                return instance;
+            }
         }
+
+        public void Dispose()
+        {
+            instance?.Browser?.Dispose();
+            instance = null;
+        }
+        #endregion
+
+        public Browser Browser { get; private set; }
     }
 }

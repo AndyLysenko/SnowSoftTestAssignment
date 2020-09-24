@@ -13,6 +13,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.8" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.8" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="[15.9.*,16.5)" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
     <PackageReference Include="Selenium.Support" Version="3.141.*" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.*" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="85.0.*" />
@@ -30,10 +31,6 @@
     <None Update="runsettingsGlobal.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

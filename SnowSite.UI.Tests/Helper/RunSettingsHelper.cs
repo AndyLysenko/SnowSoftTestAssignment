@@ -14,6 +14,7 @@ namespace SnowSite.UI.Tests.Helper
 
         public static IConfigurationSection WebDriverSettings => RunSettings.GetSection("webdriver");
         public static IConfigurationSection RunEnvironment => RunSettings.GetSection("environment");
+        public static IConfigurationSection UiSettings => RunSettings.GetSection("ui");
 
         private static IConfigurationRoot ReadConfiguration()
         {

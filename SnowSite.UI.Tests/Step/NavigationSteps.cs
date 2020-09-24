@@ -1,4 +1,5 @@
-﻿using SnowSite.UI.Tests.Page;
+﻿using SnowSite.UI.Tests.Page.GlobalCommunity;
+using SnowSite.UI.Tests.Page.Home;
 using SnowSite.UI.Tests.Web;
 
 namespace SnowSite.UI.Tests.Step
@@ -12,9 +13,7 @@ namespace SnowSite.UI.Tests.Step
 
         public static GlobalCommunityPage OpenGlobalCommunityPage()
         {
-            return OpenHomePage().OpenGlobalCommunityPage().WaitTillLoaded();
+            return OpenHomePage().OpenGlobalCommunityPage();
         }
-
-
     }
 }

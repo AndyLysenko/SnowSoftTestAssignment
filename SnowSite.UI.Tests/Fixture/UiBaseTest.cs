@@ -1,9 +1,6 @@
 ﻿using SnowSite.UI.Tests.Context;
+using SnowSite.UI.Tests.Logger;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -17,16 +14,33 @@ namespace SnowSite.UI.Tests.Fixture
 
         public ITestOutputHelper TestOutput { get; private set; }
 
-        public UiBaseTest(UiTestAssemblyFixture uiTestAssemblyFixture, UiTestClassFixture uiTestClassFixture, ITestOutputHelper output) {
+        public UiBaseTest(UiTestAssemblyFixture uiTestAssemblyFixture, UiTestClassFixture uiTestClassFixture, ITestOutputHelper output)
+        {
             UiTestAssemblyFixture = uiTestAssemblyFixture;
             UiTestClassFixture = uiTestClassFixture;
             TestOutput = output;
 
-            WebContext.Initialize();
+            TestContext.Instance.SetLogger(new ConsoleLogger(output)).WriteLine("Test Started.");
         }
 
-        public void Dispose() {
-            WebContext.Dispose();
+        public void Dispose()
+        {
+            CheckTestResult();
+            WebContext.Instance.Dispose();
+            TestContext.Instance.Dispose();
+        }
+
+        private void CheckTestResult()
+        {
+            if (TestContext.Instance.CurrentTestResult)
+            {
+                TestContext.Instance.Logger.BreakLine().WriteLine("Test Passed.");
+            }
+            else
+            {
+                TestContext.Instance.Logger.BreakLine().WriteLine("Test Failed. Check logs for details.");
+                Assert.True(false, "Test Failed. Check logs for details.");
+            }
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿namespace SnowSite.UI.Tests.Page
+﻿namespace SnowSite.UI.Tests.Page.Base
 {
     public interface IPage
     {
-        //string Name { get;  }
         void WaitTillLoaded();
     }
 }

@@ -2,10 +2,13 @@
   "webdriver": {
     "browser": "chrome",
     "commandTimeout": 60,
-    "searchTimeout": 20,
-    "pageLoadTimeout": 30
+    "searchTimeout": 60,
+    "pageLoadTimeout": 60
   },
   "environment": {
-    "homepage": "https://www.snowsoftware.com/"
+    "homepageUrl": "https://www.snowsoftware.com/"
+  },
+  "ui": {
+    "waitpagesloaded": "false"
   }
 }

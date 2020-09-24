@@ -6,6 +6,8 @@
 
         Firefox = 1,
 
-        IE = 2
+        Edge = 2,
+
+        IE = 3
     }
 }

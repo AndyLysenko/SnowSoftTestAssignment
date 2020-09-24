@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace SnowSite.UI.Tests.Fixture
 {
-    public class UiTestAssemblyFixture: IDisposable
+    public class UiTestAssemblyFixture : IDisposable
     {
         public UiTestAssemblyFixture() { }
 
